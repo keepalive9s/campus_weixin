@@ -1,0 +1,30 @@
+<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">
+	<view slot="backText">返回</view>
+	<view slot="content">{{title}}</view>
+</cu-custom>
+<view class="cu-card case" wx:for="{{posts}}">
+	<view class="cu-item shadow">
+		<view class="image">
+			<image src="{{item.pic}}" mode="widthFix"></image>
+			<view class="cu-bar bg-shadeBottom">
+				<text class="text-cut">{{item.content}}</text>
+			</view>
+		</view>
+		<view class="cu-list menu-avatar">
+			<view class="cu-item">
+				<view class="cu-avatar round lg" style="background-image:url({{item.avatar}});"></view>
+				<view class="content flex-sub">
+					<view class="text-grey">{{item.username}}</view>
+					<view class="text-gray text-sm flex justify-between">
+						{{item.time}}
+						<view class="text-gray text-sm">
+							<text class="cuIcon-attentionfill margin-lr-xs"></text>{{item.view}}
+							<text class="cuIcon-appreciatefill margin-lr-xs"></text>{{item.like}}
+							<text class="cuIcon-messagefill margin-lr-xs"></text>{{item.comment}}
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "campus": "/pages/campus/home/home",
+    "community": "/pages/community/home/home",
+    "personal": "/pages/personal/home/home"
+  }
+}

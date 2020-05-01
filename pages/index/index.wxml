@@ -1,0 +1,23 @@
+<campus wx:if="{{PageCur=='campus'}}"></campus>
+<community wx:if="{{PageCur=='community'}}"></community>
+<personal wx:if="{{PageCur=='personal'}}"></personal>
+<view class="cu-bar tabbar bg-white shadow foot">
+	<view class="action" bindtap="NavChange" data-cur="campus">
+		<view class='cuIcon-cu-image'>
+			<image src="/images/tabbar/campus{{PageCur=='campus'?'_cur':''}}.png"></image>
+		</view>
+		<view class="{{PageCur=='campus'?'text-green':'text-gray'}}">圈子</view>
+	</view>
+	<view class="action" bindtap="NavChange" data-cur="community">
+		<view class='cuIcon-cu-image'>
+			<image src="/images/tabbar/community{{PageCur=='community'?'_cur':''}}.png"></image>
+		</view>
+		<view class="{{PageCur=='community'?'text-green':'text-gray'}}">社团</view>
+	</view>
+	<view class="action" bindtap="NavChange" data-cur="personal">
+		<view class='cuIcon-cu-image'>
+			<image src="/images/tabbar/personal{{PageCur=='personal'?'_cur':''}}.png"></image>
+		</view>
+		<view class="{{PageCur=='personal'?'text-green':'text-gray'}}">个人</view>
+	</view>
+</view>
