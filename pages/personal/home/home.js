@@ -7,8 +7,35 @@ Component({
     forksCount: 0,
     visitTotal: 0,
   },
+  onLoad: function () {
+
+  },
   attached() {
-    console.log("success")
+    // 查看是否授权
+    wx.getSetting({
+      success(res) {
+        if (res.authSetting['scope.userInfo']) {
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+          wx.getUserInfo({
+            success: function (res) {
+              console.log(res.userInfo.avatarUrl)
+            }
+          })
+        } else {
+          wx.authorize({
+            scope: 'scope.userInfo',
+            success() {
+              wx.getUserInfo({
+                success: function (res) {
+                  console.log(res.userInfo.avatarUrl)
+                }
+              })
+            }
+          })
+        }
+      }
+    })
+
     let that = this;
     wx.showLoading({
       title: '数据加载中',
@@ -16,6 +43,7 @@ Component({
     })
     let i = 0;
     numDH();
+
     function numDH() {
       if (i < 20) {
         setTimeout(function () {

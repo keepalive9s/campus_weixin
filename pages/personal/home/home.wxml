@@ -1,6 +1,6 @@
 <scroll-view scroll-y class="scrollPage">
   <view class="UCenter-bg">
-    <image src="http://123.57.78.6:9000/ioibhbgh/IMG_00652.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=e07e56d6258c%2F20200501%2F%2Fs3%2Faws4_request&X-Amz-Date=20200501T112414Z&X-Amz-Expires=432000&X-Amz-SignedHeaders=host&X-Amz-Signature=8b4cf09579c38075ca36a9fb9bb35a785d50cb12f8f3ae974df92f8ddd290dda" class="png" mode="widthFix"></image>
+    <image src="" class="png" mode="widthFix"></image>
     <view class="text-xl">测试用户1
     </view>
     <view class="margin-top-sm">
