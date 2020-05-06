@@ -26,6 +26,17 @@ Page({
       view: 40,
       like: 20,
       comment: 30
+    },
+    {
+      id: 3,
+      pic: "http://123.57.78.6:9000/ioibhbgh/20190215081642_3338.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=e07e56d6258c%2F20200501%2F%2Fs3%2Faws4_request&X-Amz-Date=20200501T131510Z&X-Amz-Expires=432000&X-Amz-SignedHeaders=host&X-Amz-Signature=5acd2d1aafd695b5418059addd59d4ded067ff878061b3a2be2555fa482c7cd0",
+      content: "测试标题2",
+      avatar: "http://123.57.78.6:9000/ioibhbgh/IMG_00652.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=e07e56d6258c%2F20200501%2F%2Fs3%2Faws4_request&X-Amz-Date=20200501T112414Z&X-Amz-Expires=432000&X-Amz-SignedHeaders=host&X-Amz-Signature=8b4cf09579c38075ca36a9fb9bb35a785d50cb12f8f3ae974df92f8ddd290dda",
+      username: "考研用户1",
+      time: "5月1日",
+      view: 40,
+      like: 20,
+      comment: 30
     }]
   },
   onLoad(options) {
