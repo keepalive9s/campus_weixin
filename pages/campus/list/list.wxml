@@ -2,6 +2,14 @@
 	<view slot="backText">返回</view>
 	<view slot="content">{{title}}</view>
 </cu-custom>
+<view class="cu-bar bg-white solid-bottom">
+	<view class="action">
+		<text class="cuIcon-title text-blue"></text>在此板块发布新内容
+	</view>
+	<navigator class="action" url="design" hover-class="none">
+		<text class="cuIcon-roundadd text-sl"></text>
+	</navigator>
+</view>
 <view class="cu-card case" wx:for="{{posts}}">
 	<view class="cu-item shadow">
 		<view class="image">

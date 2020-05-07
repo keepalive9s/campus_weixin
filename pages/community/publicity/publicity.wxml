@@ -1,0 +1,36 @@
+<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">
+	<view slot="backText">返回</view>
+	<view slot="content">社团宣传页</view>
+</cu-custom>
+<view class="cu-bar bg-white margin-top">
+	<view class="action">
+		<text class="cuIcon-title text-pink"></text>网球社
+	</view>
+</view>
+<swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
+	<swiper-item wx:for="{{swiperList}}" wx:key class="{{cardCur==index?'cur':''}}">
+		<view class="swiper-item">
+			<image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+			<video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+		</view>
+	</swiper-item>
+</swiper>
+<view class="cu-bar bg-white solid-bottom margin-top">
+	<view class="action">
+		<text class="cuIcon-title text-blue"></text>社团介绍
+	</view>
+</view>
+<view class="padding bg-white">
+	<view class="text-left">
+  风者，仪也，乃人之神韵；采者，像也，乃人之颜色也。
+		社名风采是指社团中每一位社员精神气质与外貌俱佳。
+		风：网球是绅士运动，作为风采网球社的每一位成员都要有绅士的作风。
+		采：神采也，不仅在精神方面达到绅士网球的要求，网球的技术也要过硬，一展华采。
+		一中之风采，固名起风采也。
+  </view>
+</view>
+<view class="padding-xl">
+	<view class="margin-tb-sm text-center">
+		<button class="cu-btn round bg-blue shadow">立即报名</button>
+	</view>
+</view>

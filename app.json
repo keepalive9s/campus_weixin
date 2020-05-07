@@ -6,11 +6,10 @@
     "pages/community/home/home"
   ],
   "window": {
-    "navigationStyle": "custom",
-    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#39b54a",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
+    "navigationBarTitleText": "Color UI",
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "white"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json",
