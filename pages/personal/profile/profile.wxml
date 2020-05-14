@@ -2,28 +2,28 @@
 	<view slot="backText">返回</view>
 	<view slot="content">个人资料设置</view>
 </cu-custom>
-<form>
+<form bindsubmit="studentSubmit">
 	<view class="cu-form-group margin-top">
 		<view class="title">学号</view>
-		<input></input>
+		<input name="id" value="{{student.id}}"></input>
 	</view>
 	<view class="cu-form-group margin-top">
 		<view class="title">姓名</view>
-		<input></input>
+		<input name="name" value="{{student.name}}"></input>
 	</view>
 	<view class="cu-form-group">
 		<view class="title">性别</view>
-		<switch class="switch-sex" checked></switch>
+		<switch name="sex" class="switch-sex" checked="{{student.sex}}"></switch>
 	</view>
 	<view class="cu-form-group margin-top">
 		<view class="title">专业</view>
-		<input></input>
+		<input name="speciality" value="{{student.speciality}}"></input>
 	</view>
 	<view class="cu-form-group margin-top">
 		<view class="title">学院</view>
-		<input></input>
+		<input name="collage" value="{{student.collage}}"></input>
+	</view>
+	<view class="padding flex flex-direction">
+		<button class="cu-btn bg-blue margin-tb-sm lg" form-type="submit">保存</button>
 	</view>
 </form>
-<view class="padding flex flex-direction">
-  <button class="cu-btn bg-blue margin-tb-sm lg">保存</button>
-</view>

@@ -1,15 +1,17 @@
 <cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">
 	<view slot="backText">返回</view>
-	<view slot="content">{{title}}</view>
+	<view slot="content">按板块浏览</view>
 </cu-custom>
-<view class="cu-bar bg-white solid-bottom">
+<navigator class="cu-bar bg-white solid-bottom" url="/pages/campus/send/send?id={{id}}">
 	<view class="action">
-		<text class="cuIcon-title text-blue"></text>在此板块发布新内容
+		<text class="cuIcon-title text-blue"></text>{{title}}
 	</view>
-	<navigator class="action" url="design" hover-class="none">
-		<text class="cuIcon-roundadd text-sl"></text>
-	</navigator>
-</view>
+	<view class="action">
+		<button class="cu-btn round bg-olive shadow">
+			发布新内容
+		</button>
+	</view>
+</navigator>
 <view class="cu-card case" wx:for="{{posts}}">
 	<view class="cu-item shadow">
 		<view class="image">

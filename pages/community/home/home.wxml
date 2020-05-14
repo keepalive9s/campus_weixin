@@ -5,9 +5,9 @@
     </view>
   </cu-custom>
   <view class="cu-card">
-    <view class="cu-item bg-img shadow-blur" style="background-image:url({{item.img}})" bindtap="toChild" data-url="{{item.url}}" wx:for="{{list}}" wx:key>
+    <view class="cu-item bg-img shadow-blur" style="background-image:url({{item.imgUrl}})" bindtap="toChild" data-url="{{item.id}}" wx:for="{{list}}" wx:key>
       <view class="cardTitle">
-        {{item.title}}
+        {{item.name}}
       </view>
     </view>
   </view>

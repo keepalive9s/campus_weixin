@@ -8,7 +8,6 @@ Component({
     visitTotal: 0,
   },
   onLoad: function () {
-
   },
   attached() {
     // 查看是否授权

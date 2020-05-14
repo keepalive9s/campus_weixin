@@ -1,37 +1,30 @@
 const app = getApp();
 Component({
+  lifetimes: {
+    attached: function () {
+      wx.request({
+        url: 'http://127.0.0.1:8080/api/community',
+        method: 'GET',
+        success: res => {
+          this.setData({
+            list: res.data
+          })
+        }
+      })
+    },
+  },
   options: {
     addGlobalClass: true,
   },
   data: {
     StatusBar: app.globalData.StatusBar,
     CustomBar: app.globalData.CustomBar,
-    list: [{
-        title: '网球社',
-        img: 'https://image.weilanwl.com/color2.0/plugin/sylb2244.jpg',
-        url: '/indexes/indexes'
-      },
-      {
-        title: '大学生艺术团',
-        img: 'https://image.weilanwl.com/color2.0/plugin/wdh2236.jpg',
-        url: '/animation/animation'
-      },
-      {
-        title: '凤凰文学社',
-        img: 'https://image.weilanwl.com/color2.0/plugin/qpct2148.jpg',
-        url: '/drawer/drawer'
-      },
-      {
-        title: '自行车协会',
-        img: 'https://image.weilanwl.com/color2.0/plugin/qpczdh2307.jpg',
-        url: '/verticalnav/verticalnav'
-      }
-    ]
+    list: []
   },
   methods: {
     toChild(e) {
       wx.navigateTo({
-        url: '/pages/plugin' + e.currentTarget.dataset.url
+        url: '/pages/community/publicity/publicity?id=' + e.currentTarget.dataset.url
       })
     },
   }

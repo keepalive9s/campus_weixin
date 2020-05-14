@@ -23,12 +23,6 @@
 		</view>
 	</view>
 	<view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
-		<view class="cu-item arrow">
-			<navigator class="content" url="/pages/community/publicity/publicity" hover-class="none">
-				<text class="cuIcon-people text-grey"></text>
-				<text class="text-grey">社团</text>
-			</navigator>
-		</view>
     <view class="cu-item arrow">
 			<navigator class="content" url="/pages/personal/profile/profile" hover-class="none">
 				<text class="cuIcon-people text-grey"></text>
