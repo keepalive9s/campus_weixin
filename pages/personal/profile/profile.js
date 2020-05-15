@@ -3,7 +3,7 @@ Component({
   lifetimes: {
     attached: function () {
       wx.request({
-        url: 'http://127.0.0.1:8080/api/student/' + getApp().globalData.openid,
+        url: getApp().globalData.url + 'student/' + getApp().globalData.openid,
         method: 'GET',
         success: res => {
           if (res.statusCode === 200) {
@@ -29,7 +29,8 @@ Component({
       name: '',
       sex: false,
       speciality: '',
-      collage: ''
+      collage: '',
+      avatarUrl: ''
     }
   },
 
@@ -38,10 +39,20 @@ Component({
    */
   methods: {
     studentSubmit(e) {
+      this.setData({
+        student: {
+          id: e.detail.value.id,
+          name: e.detail.value.name,
+          sex: e.detail.value.sex,
+          speciality: e.detail.value.speciality,
+          collage: e.detail.value.collage,
+          avatarUrl: getApp().globalData.userInfo.avatarUrl
+        }
+      })
       wx.request({
-        url: 'http://127.0.0.1:8080/api/student/' + getApp().globalData.openid,
+        url: getApp().globalData.url + 'student/' + getApp().globalData.openid,
         method: 'POST',
-        data: e.detail.value,
+        data: this.data.student,
         success: res => {
           if (res.statusCode === 200) {
             wx.showToast({

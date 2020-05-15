@@ -15,16 +15,16 @@
 <view class="cu-card case" wx:for="{{posts}}">
 	<view class="cu-item shadow">
 		<view class="image">
-			<image src="{{item.pic}}" mode="widthFix"></image>
+			<image src="{{item.picUrl}}" mode="widthFix"></image>
 			<view class="cu-bar bg-shadeBottom">
-				<text class="text-cut">{{item.content}}</text>
+				<text class="text-cut">{{item.title}}</text>
 			</view>
 		</view>
 		<view class="cu-list menu-avatar">
 			<view class="cu-item">
-				<view class="cu-avatar round lg" style="background-image:url({{item.avatar}});"></view>
+				<view class="cu-avatar round lg" style="background-image:url({{item.avatarUrl}});"></view>
 				<view class="content flex-sub">
-					<view class="text-grey">{{item.username}}</view>
+					<view class="text-grey">{{item.name}}</view>
 					<view class="text-gray text-sm flex justify-between">
 						{{item.time}}
 						<view class="text-gray text-sm">

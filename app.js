@@ -4,7 +4,7 @@ App({
     wx.login({
       success(res) {
         wx.request({
-          url: 'http://127.0.0.1:8080/api/auth/wx_auth',
+          url: getApp().globalData.url + 'auth/wx_auth',
           data: {
             code: res.code
           },
@@ -42,7 +42,7 @@ App({
           wx.getUserInfo({
             success: res => {
               // 可以将 res 发送给后台解码出 unionId
-              this.globalData.userInfo = res.userInfo
+              getApp().globalData.userInfo = res.userInfo
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况
               if (this.userInfoReadyCallback) {
@@ -50,29 +50,15 @@ App({
               }
             }
           })
-        } else {
-          wx.authorize({
-            scope: 'scope.userInfo',
-            success() {
-              wx.getUserInfo({
-                success: res => {
-                  // 可以将 res 发送给后台解码出 unionId
-                  this.globalData.userInfo = res.userInfo
-                  // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-                  // 所以此处加入 callback 以防止这种情况
-                  if (this.userInfoReadyCallback) {
-                    this.userInfoReadyCallback(res)
-                  }
-                }
-              })
-            }
-          })
         }
       }
     })
   },
   globalData: {
-    userInfo: null,
-    openid: ''
+    userInfo: {
+      avatarUrl: ''
+    },
+    openid: '',
+    url: 'http://127.0.0.1:8080/api/'
   }
 })

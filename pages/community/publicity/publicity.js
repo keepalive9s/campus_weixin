@@ -10,7 +10,7 @@ Page({
   },
   onLoad(options) {
     wx.request({
-      url: 'http://127.0.0.1:8080/api/community/img/' + options.id,
+      url: getApp().globalData.url + 'community/img/' + options.id,
       method: 'GET',
       success: res => {
         this.setData({
@@ -20,7 +20,7 @@ Page({
       }
     })
     wx.request({
-      url: 'http://127.0.0.1:8080/api/community/' + options.id,
+      url: getApp().globalData.url + 'community/' + options.id,
       method: 'GET',
       success: res => {
         this.setData({
@@ -32,7 +32,7 @@ Page({
   apply() {
     console.log(this.data.community.id)
     wx.request({
-      url: 'http://127.0.0.1:8080/api/join',
+      url: getApp().globalData.url + 'join',
       method: 'POST',
       data: {
         openId: getApp().globalData.openid,

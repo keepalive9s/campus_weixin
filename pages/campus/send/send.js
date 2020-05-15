@@ -1,44 +1,55 @@
 // pages/campus/send/send.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
+    gid: null,
     index: null,
     imgList: [],
     textareaAValue: '',
     modalName: null,
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
-    console.log(options)
-    // this.setData({
-    //   id: options.id,
-    //   title: options.title
-    // })
+    this.setData({
+      gid: options.id,
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
   onReady: function () {
 
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow: function () {
 
   },
-
+  postSubmit(e) {
+    var self = this
+    wx.uploadFile({
+      filePath: this.data.imgList[0],
+      name: 'file',
+      url: getApp().globalData.url + 'oss',
+      success(res) {
+        console.log(res)
+        console.log(JSON.parse(res.data).url)
+        wx.request({
+          url: getApp().globalData.url + 'post/group/' + self.data.gid + '/' + getApp().globalData.openid,
+          method: 'POST',
+          data: {
+            title: e.detail.value.title,
+            content: e.detail.value.content,
+            picUrl: JSON.parse(res.data).url
+          },
+          success: res => {
+            if (res.statusCode === 200) {
+              wx.showToast({
+                title: "发布成功",
+                duration: 2000
+              })
+            }
+          }
+        })
+      }
+    })
+  },
   ChooseImage() {
     wx.chooseImage({
-      count: 4, //默认9
+      count: 1, //默认9
       sizeType: ['original', 'compressed'], //可以指定是原图还是压缩图，默认二者都有
       sourceType: ['album'], //从相册选择
       success: (res) => {
@@ -62,7 +73,7 @@ Page({
   },
   DelImg(e) {
     wx.showModal({
-      title: '召唤师',
+      title: '提示',
       content: '确定要删除这段回忆吗？',
       cancelText: '再看看',
       confirmText: '再见',
